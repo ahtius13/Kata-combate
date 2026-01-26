@@ -16,6 +16,11 @@ Cada 10 puntos en una de las estadisticas se añade D10 a la tirada en el combat
 
 La vida es la suma total de los puntos en las otras estadisticas más una tirada de resistencia (1D10 * (Resistencia/10)) 
 
+#### Acciones
+- Atacar
+- Defender
+- Recibir Daño
+
 ### Arena
 La Arena es el lugar donde se realiza el combate:
 
