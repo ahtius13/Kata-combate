@@ -19,7 +19,6 @@ La vida es la suma total de los puntos en las otras estadisticas más una tirada
 #### Acciones
 - Atacar
 - Defender
-- Moverse
 - Recibir Daño
 
 ### Arena
@@ -33,7 +32,7 @@ La Arena es el lugar donde se realiza el combate:
 Son los movimientos que realizan los luchadores:
 
 - Potencia
-- Alcance
+- combo
 
 ### Defensas
 Son las distintas formas de defenderse de los luchadores:
