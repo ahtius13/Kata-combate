@@ -19,6 +19,7 @@ La vida es la suma total de los puntos en las otras estadisticas más una tirada
 #### Acciones
 - Atacar
 - Defender
+- Obtener iniciativa
 - Recibir Daño
 
 ### Arena
