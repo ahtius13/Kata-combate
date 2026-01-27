@@ -33,3 +33,21 @@ class Luchador:
             dice = random.randit(1,10)
             
          return bloqueado 
+
+    def iniciativa (self):
+        dados = self.agilidad / 10
+        i = 1
+        dice = random.randint(1,10)
+        while i <= dados:
+            velocidad = 0 + dice
+            i += 1
+            dice = random.randit(1,10)
+
+        return velocidad
+    
+    def lifeLost (self, Luchador):
+
+        dañorecibido = Luchador.atacar - self.defender
+        self.vida = self.vida - dañorecibido
+
+        return self.vida
