@@ -1,33 +1,64 @@
-from luchador import Luchador
+from luchador_agresivo import Luchador_Agresivo
+from luchador_defensivo import Luchador_Defensivo
+from luchador_agil import Luchador_Agil
+from luchador_boss import Luchador_Boss
 import random
 
-ninja = Luchador ("Hattori", "agilidad", 100, 30, 30, 30)
 
-tercio = Luchador ("Santiago", "fuerza", 100, 30, 30, 30 )
+ninja = Luchador_Agil ("Hattori", "agilidad", 100, 30, 30, 30)
 
-ninja.preparar
-tercio.preparar
+tercio = Luchador_Agresivo ("Santiago", "ataque", 100, 30, 30, 30 )
+
+caballero = Luchador_Defensivo ("Reinhart", "defensa", 100, 30, 30, 30)
+
+angel = Luchador_Boss ("Azrael", "boss", 100, 30, 30, 30)
+
+contendientes = [ninja, tercio, caballero, angel]
+
+#contendientes_random = contendientes[:]
+#random.shuffle (contendientes_random)
+#player1 = contendientes_random[0]
+#player2 = contendientes_random[1]
+
+player1, player2 = random.sample(contendientes, 2)
+
+
+#player1 = random.choice(contendientes)
+
+#player2 = random.choice(contendientes)
+
+
+player1.preparar()
+
+player2.preparar()
 
 if __name__ == "__main__":
-
+    
+    print (f"{player1.nombre} vs {player2.nombre}")
     turno = 1
 
-    while ninja.vida > 0 & tercio.vida > 0:
-        if ninja.iniciativa > tercio.iniciativa:
-            ninja.atacar
-            tercio.defender
-            print (f"Turno {turno}")
-            print (f"{ninja.nombre} ataca a {tercio.nombre} cuya vida restante es {tercio.lifeLost} ")
-            turno =+ 1
+    player1Speed = player1.iniciativa()
+    player2Speed = player2.iniciativa()
+   
+    while player1.vida > 0 and player2.vida > 0:
+        print (f"Turno {turno}")
+        if player1Speed > player2Speed:
+          
+            player2.lifeLost(player1)
+            print (f"{player1.nombre} ataca a {player2.nombre} cuya vida restante es {player2.vida} ")
+            
+            
         else:
-            tercio.atacar
-            ninja.defender
-            print (f"Turno {turno}")
-            print (f"{tercio.nombre} ataca a {ninja.nombre} cuya vida restante es {ninja.lifeLost} ")
-            turno =+ 1
+           
+            player1.lifeLost(player2)
+            print (f"{player2.nombre} ataca a {player1.nombre} cuya vida restante es {player1.vida} ")
 
-    if ninja.vida <= 0:
-        print (f"¡{ninja.nombre} ha sido derrotado, {tercio.nombre} gana!")
+        turno = turno + 1
+        
+            
 
-    if tercio.vida <= 0:
-        print (f"¡{tercio.nombre} ha sido derrotado, {ninja.nombre} gana!")
+    if player1.vida <= 0:
+        print (f"¡{player1.nombre} ha sido derrotado, {player2.nombre} gana!")
+
+    if player2.vida <= 0:
+        print (f"¡{player2.nombre} ha sido derrotado, {player1.nombre} gana!")
