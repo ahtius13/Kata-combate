@@ -18,7 +18,7 @@ class Luchador:
         self.vida = self.vida + random.randint (0, 10)
         self.fuerza = self.fuerza + random.randint (0, 10)
         self.resistencia = self.resistencia + random.randint (0, 10)
-        self.agilidad = self.agilidad + random.randint (0, 50)
+        self.agilidad = self.agilidad + random.randint (0, 10)
         
         return self.vida, self.fuerza, self.resistencia, self.agilidad
         
