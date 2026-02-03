@@ -37,21 +37,26 @@ if __name__ == "__main__":
     print (f"{player1.nombre} vs {player2.nombre}")
     turno = 1
 
-    player1Speed = player1.iniciativa()
-    player2Speed = player2.iniciativa()
+    
    
     while player1.vida > 0 and player2.vida > 0:
+        player1Speed = player1.iniciativa()
+        player2Speed = player2.iniciativa()
         print (f"Turno {turno}")
         if player1Speed > player2Speed:
           
             player2.lifeLost(player1)
             print (f"{player1.nombre} ataca a {player2.nombre} cuya vida restante es {player2.vida} ")
+            player1.lifeLost(player2)
+            print (f"{player2.nombre} contraataca a {player1.nombre} cuya vida restante es {player1.vida}")
             
             
         else:
            
             player1.lifeLost(player2)
             print (f"{player2.nombre} ataca a {player1.nombre} cuya vida restante es {player1.vida} ")
+            player2.lifeLost(player1)
+            print (f"{player1.nombre} contraataca a {player2.nombre} cuya vida restante es {player2.vida} ")
 
         turno = turno + 1
         
